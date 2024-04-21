@@ -2,7 +2,7 @@
 
 **config file**
 
-The config files for four scenes: carnation, aloacasia, hat, telephone is in configs/ folder. Please check the path for `dataset_dir` and `model_list` is correct after you download all the models. 
+The config files for four scenes: carnation, aloacasia, hat, telephone is in `configs/` folder. Please check the path for `dataset_dir` and `model_list` is correct after you download all the models. 
 
 **inference.py** 
 
