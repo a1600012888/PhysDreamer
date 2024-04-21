@@ -1,10 +1,10 @@
 import numpy as np
 
 exp_name = "telephone"
-dataset_dir = "../../data/physics_dreamer/telephone_nerfstudio/"
+dataset_dir = "../../data/physics_dreamer/telephone/"
 result_dir = "output/telephone/results"
 
-model_list = ["../../../model/physdreamer/telephone/model"]
+model_list = ["../../models/physdreamer/telephone/model"]
 
 focus_point_list = [
     np.array([-0.401468, 0.889287, -0.116852]),  # botton of the background
@@ -43,6 +43,7 @@ simulate_cfg = {
     "substep": 256,
     "grid_size": 96,
     "init_young": 1e5,
+    "downsample_scale": 0.1,  # downsample the points to speed up the simulation
 }
 
 

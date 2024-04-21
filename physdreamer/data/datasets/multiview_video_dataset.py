@@ -124,7 +124,7 @@ class MultiviewVideoDataset(Dataset):
 
         self.data_dir = data_dir
         self.video_dir = os.path.join(data_dir, video_dir_name)
-        assert os.path.exists(self.video_dir), "videos not exist!"
+
         self.use_white_background = use_white_background
         self.resolution = resolution
         self.scale_x_angle = scale_x_angle

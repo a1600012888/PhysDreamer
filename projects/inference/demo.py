@@ -63,12 +63,19 @@ def create_dataset(args):
     res = [576, 1024]
     video_dir_name = "videos"
 
-    dataset = MultiviewVideoDataset(
+    # dataset = MultiviewVideoDataset(
+    #     args.dataset_dir,
+    #     use_white_background=False,
+    #     resolution=res,
+    #     scale_x_angle=1.0,
+    #     video_dir_name=video_dir_name,
+    # )
+    dataset = MultiviewImageDataset(
         args.dataset_dir,
         use_white_background=False,
         resolution=res,
         scale_x_angle=1.0,
-        video_dir_name=video_dir_name,
+        load_imgs=False,
     )
 
     test_dataset = MultiviewImageDataset(
@@ -146,7 +153,8 @@ class Trainer:
             shuffle=False,
             drop_last=False,
             num_workers=0,
-            collate_fn=camera_dataset_collate_fn,
+            # collate_fn=camera_dataset_collate_fn,
+            collate_fn=camera_dataset_collate_fn_img,
         )
         dataloader = accelerator.prepare(dataloader)
         # why be used in self.compute_metric
@@ -261,6 +269,14 @@ class Trainer:
         if downsample_scale > 0 and downsample_scale < 1.0:
             print("Downsample with ratio: ", downsample_scale)
             num_cluster = int(sim_xyzs.shape[0] * downsample_scale)
+
+            # WARNING: this is a GPU implementation, and will be OOM if the number of points is large
+            # you might want to use a CPU implementation if the number of points is large
+            # For CPU implementation: uncomment the following lines
+            # from local_utils import downsample_with_kmeans
+            # sim_xyzs = downsample_with_kmeans(sim_xyzs.detach().cpu().numpy(), num_cluster)
+            # sim_xyzs = torch.from_numpy(sim_xyzs).float().to(device)
+
             sim_xyzs = downsample_with_kmeans_gpu(sim_xyzs, num_cluster)
 
             sim_gaussian_pos = self.render_params.gaussians.get_xyz.detach().clone()[
@@ -899,7 +915,7 @@ def parse_args():
 
     # demo parameters. related to parameters specified in configs/{scene_name}.py
     parser.add_argument("--scene_name", type=str, default="carnation")
-    parser.add_argument("--demo_name", type=str, default="baseline")
+    parser.add_argument("--demo_name", type=str, default="inference_demo")
     parser.add_argument("--model_id", type=int, default=0)
 
     # if eval_ys > 10. Then all the youngs modulus is set to eval_ys homogeneously

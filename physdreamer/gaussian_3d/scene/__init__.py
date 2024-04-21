@@ -13,11 +13,11 @@ import os
 import random
 import numpy as np
 import json
-from motionrep.gaussian_3d.utils.system_utils import searchForMaxIteration
-from motionrep.gaussian_3d.scene.dataset_readers import sceneLoadTypeCallbacks
-from motionrep.gaussian_3d.scene.gaussian_model import GaussianModel
-from motionrep.gaussian_3d.arguments import ModelParams
-from motionrep.gaussian_3d.utils.camera_utils import (
+from physdreamer.gaussian_3d.utils.system_utils import searchForMaxIteration
+from physdreamer.gaussian_3d.scene.dataset_readers import sceneLoadTypeCallbacks
+from physdreamer.gaussian_3d.scene.gaussian_model import GaussianModel
+from physdreamer.gaussian_3d.arguments import ModelParams
+from physdreamer.gaussian_3d.utils.camera_utils import (
     cameraList_from_camInfos,
     camera_to_JSON,
 )

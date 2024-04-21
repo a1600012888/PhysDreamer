@@ -11,7 +11,7 @@ from physdreamer.gaussian_3d.gaussian_renderer.render import (
     render_gaussian,
     render_arrow_in_screen,
 )
-from physdreamer.gaussian_3d.gaussian_rendlerer.flow_depth_render import (
+from physdreamer.gaussian_3d.gaussian_renderer.flow_depth_render import (
     render_flow_depth_w_gaussian,
 )
 import cv2

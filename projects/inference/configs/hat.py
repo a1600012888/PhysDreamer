@@ -1,11 +1,11 @@
 import numpy as np
 
-dataset_dir = "../../data/physics_dreamer/hat_nerfstudio/"
+dataset_dir = "../../data/physics_dreamer/hat/"
 result_dir = "output/hat/demo"
 exp_name = "hat"
 
 model_list = [
-    "../../../model/physdreamer/hat/model/",
+    "../../models/physdreamer/hat/model/",
 ]
 
 focus_point_list = [
