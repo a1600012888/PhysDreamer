@@ -1,6 +1,6 @@
 *.pyc
 
 models/
-./data/
+data/
 output/
 wandb/

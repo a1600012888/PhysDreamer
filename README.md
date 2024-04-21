@@ -1,4 +1,4 @@
-# PhysDreamer: Physics-Based Interaction with 3D Objects via Video Generation [[website]([https://](https://physdreamer.github.io/))]
+# PhysDreamer: Physics-Based Interaction with 3D Objects via Video Generation [[website](https://physdreamer.github.io/)]
 
 ![teaser-figure](figures/figure_teaser.png)
 
