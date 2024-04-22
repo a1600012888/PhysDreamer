@@ -49,7 +49,7 @@ We thank the authors of these projects.
 ```
 @article{zhang2024physdreamer,
     title={{PhysDreamer}: Physics-Based Interaction with 3D Objects via Video Generation},
-    author={Tianyuan Zhang and Hongxing-Yu and Rundi Wu and
+    author={Tianyuan Zhang and Hong-Xing Yu and Rundi Wu and
             Brandon Y. Feng and Changxi Zheng and Noah Snavely and Jiajun Wu and William T. Freeman},
     journal={arxiv},
     year={2024}
