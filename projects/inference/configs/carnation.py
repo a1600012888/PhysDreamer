@@ -1,6 +1,6 @@
 import numpy as np
 
-dataset_dir = "../../data/physics_dreamer/carnation/"
+dataset_dir = "../../data/physics_dreamer/carnations/"
 result_dir = "output/carnations/demos"
 exp_name = "carnations"
 
