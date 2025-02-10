@@ -1,0 +1,10 @@
+dataset_dir: 
+# optimization
+warmup_step: 10
+max_grad_norm: 10.0
+
+rand_bg: False
+
+velo_dir: [
+  "../../data/physics_dreamer/alocasia_nerfstudio/mul_videos/velopretrain_models/frame_00037_mb-8_fps-30_8",
+]
